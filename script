@@ -1,0 +1,37 @@
+Window.SetBackgroundTopColor(0.0, 0.0, 0.0);
+Window.SetBackgroundBottomColor(0.0, 0.0, 0.0);
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+logo_raw = Image("logo.png");
+bar_white_raw = Image("pill.png");
+bar_black_raw = Image("mask.png");
+logo_scale_factor = (screen_height * 0.25) / logo_raw.GetHeight();
+logo_w = Math.Int(logo_raw.GetWidth() * logo_scale_factor);
+logo_h = Math.Int(logo_raw.GetHeight() * logo_scale_factor);
+logo_image = logo_raw.Scale(logo_w, logo_h);
+bar_scale_factor = (screen_height * 0.20) / bar_white_raw.GetWidth();
+white_w = Math.Int(bar_white_raw.GetWidth() * bar_scale_factor);
+white_h = Math.Int(bar_white_raw.GetHeight() * bar_scale_factor);
+bar_white_image = bar_white_raw.Scale(white_w, white_h);
+black_w = Math.Int(bar_black_raw.GetWidth() * bar_scale_factor);
+black_h = Math.Int(bar_black_raw.GetHeight() * bar_scale_factor);
+bar_black_image = bar_black_raw.Scale(black_w, black_h);
+logo_sprite = Sprite(logo_image);
+gap = Math.Int(screen_height * 0.05);
+logo_x = (screen_width / 2) - (logo_image.GetWidth() / 2);
+logo_y = (screen_height / 2) - (logo_image.GetHeight() / 2) - gap;
+logo_sprite.SetPosition(logo_x, logo_y, 10);
+bar_white_sprite = Sprite(bar_white_image);
+bar_black_sprite = Sprite(bar_black_image);
+bar_x = (screen_width / 2) - (bar_white_image.GetWidth() / 2);
+bar_y = (screen_height / 2) + (logo_image.GetHeight() / 2) + gap;
+bar_white_sprite.SetPosition(bar_x, bar_y, 10);
+width_diff = bar_black_image.GetWidth() - bar_white_image.GetWidth();
+mask_start_x = bar_x - width_diff;
+bar_black_sprite.SetPosition(mask_start_x, bar_y, 20);
+max_shift = bar_white_image.GetWidth();
+fun progress_callback (duration, progress) {
+    current_shift = Math.Int(progress * max_shift);
+    bar_black_sprite.SetX(mask_start_x + current_shift);
+}
+Plymouth.SetBootProgressFunction(progress_callback);

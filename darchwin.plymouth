@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Darchwin
+Description=MacOS style bootsplash with the Arch logo.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/darchwin/assets
+ScriptFile=/usr/share/plymouth/themes/darchwin/script
