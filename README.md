@@ -2,7 +2,7 @@
 A MacOS inspired splash screen for `plymouth` featuring a white loading pill underneath the Arch Linux logo.
 
 ## Screenshot
-
+<img width="1080" height="1080" alt="darchwin" src="https://github.com/user-attachments/assets/04d74988-6101-413d-a1cf-0e3a68e8e1ae" />
 
 ## Install
 ```bash
