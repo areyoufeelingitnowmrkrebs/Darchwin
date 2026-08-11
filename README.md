@@ -1,4 +1,4 @@
-# darchwin
+# dArchwin
 A MacOS inspired splash screen for `plymouth` featuring a white loading pill underneath the Arch Linux logo.
 
 ## Screenshot
