@@ -1,3 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 2" width="50" height="2">
-  <rect width="50" height="2" rx="1" fill="#FFFFFF"/>
+<svg viewBox="0 0 50 2">
+  <path
+    fill="#fff"
+    d="
+      M 1 0
+      h 48
+      a 1 1 0 0 1 0 2
+      H 1
+      a 1 1 0 0 1 0 -2
+    "
+  />
 </svg>
