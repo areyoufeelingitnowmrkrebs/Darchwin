@@ -2,15 +2,13 @@
 
   <path
     fill="#000"
-    stroke="#000"
-    stroke-width="0.1"
     d="
       M 0 0
-      h 50
-      a 1 1 0 0 1 0 2
+      h 51
+      v 2
       H 0
       a 1 1 0 0 0 0 -2
     "
   />
 
-</sv
+</svg>
